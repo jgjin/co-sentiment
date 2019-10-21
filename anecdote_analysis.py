@@ -2,9 +2,8 @@
 
 from collections import defaultdict
 from glob import glob
+import heapq
 import json
-
-import matplotlib.pyplot as plt
 
 
 def main(
@@ -20,7 +19,7 @@ def main(
 
     for tone_name, tone_scores in tones_agg.items():
         print(tone_name)
-        print(max(tone_scores))
+        print(heapq.nlargest(6, tone_scores))
 
 
 if __name__ == "__main__":
